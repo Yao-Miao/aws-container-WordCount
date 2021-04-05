@@ -1,0 +1,41 @@
+version: "3.7"
+services:
+  server1:
+    build: ./wordcountserver
+    image: wordcountserver1
+    networks:
+      wc-subnet:
+        ipv4_address: 172.20.0.2
+  server2:
+    build: ./wordcountserver
+    image: wordcountserver2
+    networks:
+      wc-subnet:
+        ipv4_address: 172.20.0.3
+  server3:
+    build: ./wordcountserver
+    image: wordcountserver3
+    networks:
+      wc-subnet:
+        ipv4_address: 172.20.0.4
+  server4:
+    build: ./wordcountserver
+    image: wordcountserver4
+    networks:
+      wc-subnet:
+        ipv4_address: 172.20.0.5
+  midserver:
+    build: ./midserver
+    image: midserver
+    networks:
+      wc-subnet:
+        ipv4_address: 172.20.0.6
+    ports:
+      - 3000:3000
+
+networks:
+  wc-subnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
