@@ -57,8 +57,11 @@ In this projct, I will simulate a multi-server processing system to allow for th
 
 ### About Docker:
 - I use docker-compose.yml to deploy my application to container.
+
 ![docker-compose.yml](./image/docker_compose.jpg)
-- My Dockerfile
+
+- My Dockerfile.
+
 ![Dockerfile](./image/dockerfile.jpg)
 
 # Run the project by using your own EC2
